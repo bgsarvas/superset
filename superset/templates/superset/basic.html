@@ -141,14 +141,21 @@ governing permissions and limitations under the License. #}
     {% block tail_js %} {% if not standalone_mode %} {{ js_bundle('menu') }} {%
     endif %} {% if entry %} {{ js_bundle(entry) }} {% endif %} {% include
     "tail_js_custom_extra.html" %} {% endblock %}
-  <link rel="stylesheet" type="text/css" href="https://reflectoadmin.s3.amazonaws.com/client-widget/index.css" />
-<script type="module" src="https://reflectoadmin.s3.amazonaws.com/client-widget/index.js"></script>
-<script type="text/javascript">
-    window.addEventListener('DOMContentLoaded', function() {
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://reflectoadmin.s3.amazonaws.com/client-widget/index.css"
+    />
+    <script
+      type="module"
+      src="https://reflectoadmin.s3.amazonaws.com/client-widget/index.js"
+    ></script>
+    <script type="text/javascript">
+      window.addEventListener("DOMContentLoaded", function () {
         window.ChatAi.init({
-            projectId: "8f1e2df7-6979-4093-baf2-8344ae9acac3"
+          projectId: "8f1e2df7-6979-4093-baf2-8344ae9acac3",
         });
-    });
-</script>
+      });
+    </script>
   </body>
 </html>
