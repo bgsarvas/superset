@@ -20,6 +20,18 @@ governing permissions and limitations under the License. #}
       appbuilder.app_name %} {{ appbuilder.app_name }} {% endif %} {% endblock
       %}
     </title>
+    <script>
+      window.USER_DATA = {
+        id: "374494",
+        email: "yuriy.khoma@reflecto.ai",
+        email_verified: true,
+        first_name: "Yuriy",
+        last_name: "Khoma",
+        full_name: "Yuriy Khoma",
+      };
+      // For demonstration, let's log the USER_DATA to the console
+      print(window.USER_DATA);
+    </script>
     {% block head_meta %}{% endblock %} {% block head_css %} {% for favicon in
     favicons %} <link rel="{{favicon.rel if favicon.rel else "icon"}}"
     type="{{favicon.type if favicon.type else "image/png"}}" {% if favicon.sizes
@@ -129,5 +141,14 @@ governing permissions and limitations under the License. #}
     {% block tail_js %} {% if not standalone_mode %} {{ js_bundle('menu') }} {%
     endif %} {% if entry %} {{ js_bundle(entry) }} {% endif %} {% include
     "tail_js_custom_extra.html" %} {% endblock %}
+  <link rel="stylesheet" type="text/css" href="https://reflectoadmin.s3.amazonaws.com/client-widget/index.css" />
+<script type="module" src="https://reflectoadmin.s3.amazonaws.com/client-widget/index.js"></script>
+<script type="text/javascript">
+    window.addEventListener('DOMContentLoaded', function() {
+        window.ChatAi.init({
+            projectId: "8f1e2df7-6979-4093-baf2-8344ae9acac3"
+        });
+    });
+</script>
   </body>
 </html>
